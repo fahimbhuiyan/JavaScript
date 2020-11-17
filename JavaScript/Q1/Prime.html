@@ -1,0 +1,78 @@
+// ------------------------------------------------------------------------------
+// Assignment: #02
+// Written by: Fahim Bhuiyan 40091942
+// For SOEN 287 Section SC – Summer 2019
+// Decription: Question 1 is a number based game. It will check if the number
+// is a prime number or not. If a numeric value is not entered, it will send an
+// alert saying to enter a numeric value. When the number is a prime number it 
+// will send an alert to confirm if or not is a prime number and will reverse the number. 
+// -----------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset ="utf-8">
+        <title>
+            Prime Numbers
+        </title>
+        <script type="text/javascript">
+
+        //Check if numeric value or not
+        function validateNumber() {
+            var num = document.getElementById("userInput").value;
+
+            if(isNaN(num)) {
+                alert("Please Enter Numeric Value");
+                document.getElementById("userInput").value ="";
+                return;
+            }
+            else {
+                isPrimeNumber(num);
+            }
+        }
+        function reverseNumber() {
+
+        }
+
+        //Prime number function
+        function isPrimeNumber(num){
+            var i, flag=0, num;
+            num= Number(document.getElementById("userInput").value)
+
+            for(i=2; i <= num/2; i++)
+            {
+                if(num%i == 0)
+                {
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0) {
+                alert("The number input is: "+num+". It is a prime number.");
+            }
+            else {
+                alert("The number input is: "+num+". It is not a prime number.");
+            }
+        }
+/*
+        function reverseNumber(value) {
+            
+            value = value + "";
+            return
+            value.split("").reverse().join("")
+
+        }
+*/
+
+
+        </script>
+    </head>
+    <body>
+        <h1>
+            Prime Number Function
+        </h1>
+        <form>
+                <input type="text" name="userInput" id ="userInput" placeholder="Enter Your Number"/>
+                <input type="button" value="Try It" name="Submit" onclick="validateNumber()" />
+        </form>
+    </body>
+</html>

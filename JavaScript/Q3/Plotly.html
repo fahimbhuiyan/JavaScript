@@ -1,0 +1,42 @@
+// ------------------------------------------------------------------------------
+// Assignment: #02
+// Written by: Fahim Bhuiyan 40091942
+// For SOEN 287 Section SC – Summer 2019
+// Decription: This program will take the user input's string and also its word to
+// check how many times the letter appear. It will generate a plotly graph on what
+// letters are presented. the first 2 sources are need for the histogram to appear,
+//  wihtout them it will not work. An external JavaScript is used.
+// -----------------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="histogram.js"></script>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        <h1>
+            Plotly
+        </h1>
+        <form>
+            <table id="table">
+                <tr id="inString">
+                <td><label id="xlabel">Input String:</label></td>
+                <td><input type="text" id="x"></td>
+                </tr>
+                <tr id="word">
+                    <td><label id="wlabel">Input Word:</label></td>
+                    <td><input type="text" id="w"></td>
+                </tr>
+                <tr id="button">
+                <td colspan="2"><input type="button" value="Plot Histogram" id="submit" onclick="plotHist();"></td>
+                </tr>
+                    </table>
+                        <label></label>
+        </form>
+        <div id="graph">
+        </div>
+    </body>
+</html>

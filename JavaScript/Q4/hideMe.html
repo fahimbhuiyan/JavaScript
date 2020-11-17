@@ -1,0 +1,43 @@
+// ------------------------------------------------------------------------------
+// Assignment: #02
+// Written by: Fahim Bhuiyan 40091942
+// For SOEN 287 Section SC – Summer 2019
+// Decription: This program will check if the selected words in the array are
+// included in the string. If the words are contained in the string, it will 
+// generate X's in the word. When the word is contained in the string it will not 
+//  be highlighted and if no word in the array is contain, the sentence will be highlighted.
+// ----------------------------------------------------------------------------
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <style>
+
+        </style>
+        <script type="text/javascript">
+            function HideMe(str) {
+                var words = ["soen287", "summer", "19"];
+                for (var w in words) {
+                    pos = str.toLowerCase().indexOf(words[w].toLowerCase());
+                    if (pos != -1) {
+                        var temp = "";
+                        for (i = 0; i < words[w].length; i++) {
+                            temp += "X";
+                        }
+                        str = str.substr(0, pos) + temp + str.substr(pos + words[w].length);
+                    }
+                }
+                document.getElementById("demo").innerHTML = str;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form onsubmit="return false;">
+            <input type="text" placeholder="Enter your desired string" id="string" name="string" />
+            <button onclick="HideMe(this.form.string.value)">Try it</button>
+        </form>
+        <p id="demo"></p>
+    </body>
+</html>
